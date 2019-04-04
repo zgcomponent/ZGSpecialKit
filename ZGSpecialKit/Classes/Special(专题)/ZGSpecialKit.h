@@ -18,5 +18,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Masonry/Masonry.h>
 #import <YYWebImage/YYWebImage.h>
+#import <ZGReformerKeysKit/ZGReformerKeysKit-umbrella.h>
+#import "FFReformProtocol.h"
 
 #endif /* ZGSpecialKit_h */
