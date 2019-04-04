@@ -8,13 +8,6 @@
 #ifndef ZGSpecialKit_h
 #define ZGSpecialKit_h
 
-#import "FFConst.h"
-#import "HUDTools.h"
-#import "UILabel+Extension.h"
-#import "UIColor+Hex.h"
-#import "UIButton+Extension.h"
-#import "UIView+FFFrame.h"
-#import "UITableViewCell+FFAdd.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Masonry/Masonry.h>
 #import <YYWebImage/YYWebImage.h>
@@ -24,6 +17,5 @@
 #import <ZGToolsKit/ZGToolsKit-umbrella.h>
 #import <ZGCategoryKit/ZGCategoryKit-umbrella.h>
 #import <ZGMainViewKit/ZGMainViewKit-umbrella.h>
-#import "FFReformProtocol.h"
 
 #endif /* ZGSpecialKit_h */

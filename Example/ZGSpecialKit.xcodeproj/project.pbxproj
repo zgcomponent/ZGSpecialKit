@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		107AB17FB7A4EF72EA9B8388 /* Pods-ZGSpecialKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZGSpecialKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-ZGSpecialKit_Tests/Pods-ZGSpecialKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2E8434D83C9235B5136D8037 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2E8434D83C9235B5136D8037 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3AD8B9A9734F4B5D1A0F318F /* Pods_ZGSpecialKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZGSpecialKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5797DB7BA3C08E28A19B6E8B /* Pods-ZGSpecialKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZGSpecialKit_Example.release.xcconfig"; path = "Target Support Files/Pods-ZGSpecialKit_Example/Pods-ZGSpecialKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5BA0E5584C0E05638F7093EE /* Pods-ZGSpecialKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZGSpecialKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ZGSpecialKit_Tests/Pods-ZGSpecialKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,9 +62,9 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		866392275C1C18F4BF3BDF27 /* ZGSpecialKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZGSpecialKit.podspec; path = ../ZGSpecialKit.podspec; sourceTree = "<group>"; };
+		866392275C1C18F4BF3BDF27 /* ZGSpecialKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZGSpecialKit.podspec; path = ../ZGSpecialKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8B0C7DC48AD49B8DED5B8DFF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8B0C7DC48AD49B8DED5B8DFF /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		BA89470DFA1B919CFA823CA3 /* Pods_ZGSpecialKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZGSpecialKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E446E79F4D7CE3DC606FBF /* Pods-ZGSpecialKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZGSpecialKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-ZGSpecialKit_Example/Pods-ZGSpecialKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +103,6 @@
 				5BA0E5584C0E05638F7093EE /* Pods-ZGSpecialKit_Tests.debug.xcconfig */,
 				107AB17FB7A4EF72EA9B8388 /* Pods-ZGSpecialKit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -348,13 +347,41 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ZGSpecialKit_Example/Pods-ZGSpecialKit_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ZGAPIsKit/ZGAPIsKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ZGCategoryKit/ZGCategoryKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ZGConfigsKit/ZGConfigsKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ZGMainViewKit/ZGMainViewKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ZGReformerKeysKit/ZGReformerKeysKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ZGSpecialKit/ZGSpecialKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ZGToolsKit/ZGToolsKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZGAPIsKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZGCategoryKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZGConfigsKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZGMainViewKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZGReformerKeysKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZGSpecialKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZGToolsKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

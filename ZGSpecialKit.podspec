@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZGSpecialKit'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of ZGSpecialKit.'
 
 # This description is used to generate tags and improve search results.
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/wtj900/ZGSpecialKit'
+  s.homepage         = 'https://github.com/zgcomponent/ZGSpecialKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wtj900' => 'wtj900@163.com' }
-  s.source           = { :git => 'https://github.com/wtj900/ZGSpecialKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/zgcomponent/ZGSpecialKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -38,5 +38,14 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Masonry'
+  s.dependency 'YYWebImage'
+  s.dependency 'ReactiveCocoa', '~> 2.5'
+  s.dependency 'ZGCategoryKit'
+  s.dependency 'ZGAPIsKit'
+  s.dependency 'ZGToolsKit'
+  s.dependency 'ZGMainViewKit'
+  s.dependency 'ZGReformerKeysKit'
+  s.dependency 'ZGConfigsKit'
+  
 end
