@@ -146,7 +146,7 @@
     [RACObserve(self, dataDict) subscribeNext:^(NSDictionary *data) {
         @strongify(self)
                    
-        NSDictionary *author = [[CTMediator sharedInstance] authorReformerWithOriginData:data];
+        NSDictionary *author = [[CTMediator sharedInstance] authorReformerWithOriginData:data[kAuthorReformer]];
 //        FFAuthorListReformer *reformer = [[FFAuthorListReformer alloc] init];
 //        NSDictionary *author = [reformer reformData:data[kAuthorReformer]];
         UIImage *placehodler = [UIImage ff_imagePathWithName:@"placehodler" bundle:@"ZGSpecialKit" targetClass:[self class]];
