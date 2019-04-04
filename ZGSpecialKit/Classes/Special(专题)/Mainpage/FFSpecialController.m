@@ -48,8 +48,10 @@
 }
 
 - (void)cellHeaderIconDidClick:(NSIndexPath *)indexPath params:(NSDictionary *)params {
-//    UIViewController *controller = [[FFAuthorDetailController alloc] init];
-//    [self.navigationController pushViewController:controller animated:YES];
+    
+    //    UIViewController *controller = [[FFAuthorDetailController alloc] init];
+    UIViewController *controller = [[CTMediator sharedInstance] authorDetailViewController];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)cellDidClick:(NSIndexPath *)indexPath params:(NSDictionary *)params {
