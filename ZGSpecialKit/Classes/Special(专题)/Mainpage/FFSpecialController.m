@@ -10,7 +10,7 @@
 #import "ZGSpecialKit.h"
 #import "SpecialAPIRequest.h"
 #import "FFSpecialListReformer.h"
-#import "FFMainView.h"
+//#import "FFMainView.h"
 #import "FFSpecialCell.h"
 //#import "FFAuthorDetailController.h"
 #import "FFSpecialDetailController.h"
