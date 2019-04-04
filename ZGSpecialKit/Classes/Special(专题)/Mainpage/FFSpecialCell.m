@@ -145,32 +145,35 @@
     @weakify(self)
     [RACObserve(self, dataDict) subscribeNext:^(NSDictionary *data) {
         @strongify(self)
-    
+                   
+        NSDictionary *author = [[CTMediator sharedInstance] authorReformerWithOriginData:data];
 //        FFAuthorListReformer *reformer = [[FFAuthorListReformer alloc] init];
 //        NSDictionary *author = [reformer reformData:data[kAuthorReformer]];
-//        [self.pictureView yy_setImageWithURL:data[kSpecialPropertyListKeyPictureURL] placeholder:[UIImage imageNamed:@"placehodler"]];
-//        [self.headImgView yy_setImageWithURL:author[kAuthorPropertyListHeaderURL] placeholder:[UIImage imageNamed:@"pc_default_avatar"]];
-//        self.identityLabel.text = data[kSpecialPropertyListKeyAuthorIdentity];
-//        self.categoryLabel.text = data[kSpecialPropertyListKeyCategoryName];
-//        self.authorLabel.text = author[kAuthorPropertyListKeyName];
-//        self.titleLabel.text = data[kSpecialPropertyListKeyTitle];
-//        self.descLabel.text = data[kSpecialPropertyListKeyDesc];
-//        if (author[kAuthorPropertyListKeyAuthIcon]) {
-//            self.authImgView.image = author[kAuthorPropertyListKeyAuthIcon];
-//        }
-//        [self.bottomView.readBtn setTitle:data[kSpecialPropertyListKeyRead] forState:UIControlStateNormal];
-//        [self.bottomView.followBtn setTitle:data[kSpecialPropertyListKeyFollowNum] forState:UIControlStateNormal];
-//        [self.bottomView.commentBtn setTitle:data[kSpecialPropertyListKeyCommentNum] forState:UIControlStateNormal];
-//        
-//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
-//        [self.headImgView addGestureRecognizer:tap];
-//        @weakify(self)
-//        [[tap rac_gestureSignal] subscribeNext:^(id x) {
-//            @strongify(self)
-//            if ([self.delegate respondsToSelector:@selector(cellHeaderIconDidClick:params:)]) {
-//                [self.delegate cellHeaderIconDidClick:self.indexPath params:nil];
-//            }
-//        }];;
+        UIImage *placehodler = [UIImage ff_imagePathWithName:@"placehodler" bundle:@"ZGSpecialKit" targetClass:[self class]];
+        [self.pictureView yy_setImageWithURL:data[kSpecialPropertyListKeyPictureURL] placeholder:placehodler];
+        placehodler = [UIImage ff_imagePathWithName:@"pc_default_avatar" bundle:@"ZGSpecialKit" targetClass:[self class]];
+        [self.headImgView yy_setImageWithURL:author[kAuthorPropertyListHeaderURL] placeholder:placehodler];
+        self.identityLabel.text = data[kSpecialPropertyListKeyAuthorIdentity];
+        self.categoryLabel.text = data[kSpecialPropertyListKeyCategoryName];
+        self.authorLabel.text = author[kAuthorPropertyListKeyName];
+        self.titleLabel.text = data[kSpecialPropertyListKeyTitle];
+        self.descLabel.text = data[kSpecialPropertyListKeyDesc];
+        if (author[kAuthorPropertyListKeyAuthIcon]) {
+            self.authImgView.image = author[kAuthorPropertyListKeyAuthIcon];
+        }
+        [self.bottomView.readBtn setTitle:data[kSpecialPropertyListKeyRead] forState:UIControlStateNormal];
+        [self.bottomView.followBtn setTitle:data[kSpecialPropertyListKeyFollowNum] forState:UIControlStateNormal];
+        [self.bottomView.commentBtn setTitle:data[kSpecialPropertyListKeyCommentNum] forState:UIControlStateNormal];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+        [self.headImgView addGestureRecognizer:tap];
+        @weakify(self)
+        [[tap rac_gestureSignal] subscribeNext:^(id x) {
+            @strongify(self)
+            if ([self.delegate respondsToSelector:@selector(cellHeaderIconDidClick:params:)]) {
+                [self.delegate cellHeaderIconDidClick:self.indexPath params:nil];
+            }
+        }];
     }];
     
 }
@@ -213,7 +216,8 @@
 
 - (UIImageView *)headImgView{
     if (_headImgView == nil) {
-        _headImgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pc_default_avatar"]];
+        UIImage *placehodler = [UIImage ff_imagePathWithName:@"pc_default_avatar" bundle:@"ZGSpecialKit" targetClass:[self class]];
+        _headImgView = [[UIImageView alloc] initWithImage:placehodler];
         _headImgView.layer.cornerRadius = FFHeaderImageHeight * 0.5;
         _headImgView.layer.masksToBounds = YES;
         _headImgView.layer.borderWidth = 0.5;
@@ -225,7 +229,8 @@
 
 - (UIImageView *)authImgView{
     if (_authImgView == nil) {
-        _authImgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"personAuth"]];
+        UIImage *placehodler = [UIImage ff_imagePathWithName:@"personAuth" bundle:@"ZGSpecialKit" targetClass:[self class]];
+        _authImgView = [[UIImageView alloc]initWithImage:placehodler];
     }
     return _authImgView;
 }
@@ -233,7 +238,9 @@
 - (UILabel *)categoryLabel{
     if (_categoryLabel == nil) {
         _categoryLabel = [[UILabel alloc]init];
-        [_categoryLabel text:nil textColor:kHexColor_c7a762 fontSize:FONT_SIZE_14 fontName:FONT_FAMILY_CODE_LIGHT];
+        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [currentBundle pathForResource:@"CODE BOLD.OTF" ofType:nil inDirectory:@"FFSpecialKit"];
+        [_categoryLabel text:nil textColor:kHexColor_c7a762 fontSize:FONT_SIZE_14 fontName:path];
     }
     return _categoryLabel;
 }
@@ -241,7 +248,9 @@
 - (UILabel *)titleLabel{
     if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc]init];
-        [_titleLabel text:nil textColor:kHexColor_555 fontSize:FONT_SIZE_14 fontName:FONT_FAMILY_CODE_LIGHT];
+        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [currentBundle pathForResource:@"CODE LIGHT.OTF" ofType:nil inDirectory:@"FFSpecialKit.bundle"];
+        [_titleLabel text:nil textColor:kHexColor_555 fontSize:FONT_SIZE_14 fontName:path];
     }
     return _titleLabel;
 }
@@ -249,7 +258,9 @@
 - (UILabel *)descLabel{
     if (_descLabel == nil) {
         _descLabel = [[UILabel alloc]init];
-        [_descLabel text:nil textColor:kHexColor_555 fontSize:FONT_SIZE_12 fontName:FONT_FAMILY_CODE_LIGHT];
+        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+        NSString *path = [currentBundle pathForResource:@"CODE LIGHT.OTF" ofType:nil inDirectory:@"FFSpecialKit.bundle"];
+        [_descLabel text:nil textColor:kHexColor_555 fontSize:FONT_SIZE_12 fontName:path];
         _descLabel.numberOfLines = 2;
     }
     return _descLabel;
@@ -257,7 +268,8 @@
 
 - (UIImageView *)underlineImgView{
     if (_underlineImgView == nil) {
-        _underlineImgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"underLine"]];
+        UIImage *placehodler = [UIImage ff_imagePathWithName:@"underLine" bundle:@"ZGSpecialKit" targetClass:[self class]];
+        _underlineImgView = [[UIImageView alloc]initWithImage:placehodler];
         _underlineImgView.backgroundColor = [UIColor greenColor];
     }
     return _underlineImgView;
